@@ -8,11 +8,13 @@ import 'package:firebase_auth_bloc/domain/usecases/logout_usecase.dart';
 import 'package:firebase_auth_bloc/domain/usecases/register_usecase.dart';
 import 'package:firebase_auth_bloc/presentation/bloc/auth_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 
 class FirebaseAuthBlocInitializer {
   static Future<void> initialize({
     required FirebaseOptions firebaseOptions,
   }) async {
+    WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(options: firebaseOptions);
   }
 
